@@ -2,12 +2,16 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from "react-router-dom";
 import LoadingCircle from '../components/LoadingCircle';
 import NavBar from '../components/NavBar';
-import { Clients, Configurations, GeneralVision, NotFound, PlansNAchvmts, Products, Sales, Stores } from '../pages';
-import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, otherPageUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
-
+import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
 const LandingPage = lazy(() => import('../pages/LandingPage'));
-const OtherPage = lazy(() => import("../pages/OtherPage"));
-
+const Clients = lazy(() => import('../pages/Clients'));
+const Configurations = lazy(() => import('../pages/Configurations'));
+const GeneralVision = lazy(() => import('../pages/GeneralVision'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+const PlansNAchvmts = lazy(() => import('../pages/PlansNAchvmts'));
+const Products = lazy(() => import('../pages/Products'));
+const Sales = lazy(() => import('../pages/Sales'));
+const Stores = lazy(() => import('../pages/Stores'));
 const AppRoutes = () => {
   return (
     <>
@@ -20,11 +24,6 @@ const AppRoutes = () => {
             </Suspense>
           }
         />
-        <Route path={ otherPageUrl } element={
-          <Suspense fallback={ <LoadingCircle /> }>
-            <OtherPage />
-          </Suspense>
-        } />
         <Route path={ generalVUrl } element={
           <Suspense fallback={ <LoadingCircle /> }>
             <GeneralVision />

@@ -1,5 +1,4 @@
 export const landingPageUrl = '/';
-export const otherPageUrl = '/a';
 export const generalVUrl = '/visaogeral';
 export const storesUrl = '/lojas';
 export const salesUrl = '/vendas';
