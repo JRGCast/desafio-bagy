@@ -1,18 +1,24 @@
 import { NavLink } from "react-router-dom";
+import '../sass/main.scss';
 import { allUrlsArr } from "../utils/internalUrls";
 
-const navLinksMapping = allUrlsArr.map(({ name, path }) => {
+const navLinksMapping = allUrlsArr.map(({ name, path, icon }) => {
   return (
-    <NavLink style={ { margin: '0.5em' } } key={ name } to={ path }>{ name }</NavLink>
+    <NavLink className='NavBar-navLink' key={ name } to={ path }>{ icon }{ " " }{ name }</NavLink>
   );
 });
+
 const NavBar = () => {
   return (
-    <>
-      <ul style={ { margin: '0', padding: '0', display: 'flex', flexFlow: 'column wrap', justifyContent: 'space-evenly' } }>
+    <nav className="NavBar-wrapper">
+      <div className="NavBar-header-wrapper">
+        <h2>Dashboard</h2>
+        <img className="NavBar-img" src='https://site.bagy.com.br/wp-content/uploads/2021/02/logo-1.png' alt='bagy-logo' />
+      </div>
+      <ul className="NavBar-links-wrapper">
         { navLinksMapping }
       </ul>
-    </>
+    </nav>
   );
 };
 

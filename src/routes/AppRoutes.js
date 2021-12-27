@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from "react-router-dom";
 import LoadingCircle from '../components/LoadingCircle';
-import NavBar from '../components/NavBar';
 import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
 const LandingPage = lazy(() => import('../pages/LandingPage'));
 const Clients = lazy(() => import('../pages/Clients'));

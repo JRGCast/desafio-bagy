@@ -1,4 +1,10 @@
-.loader {
+.LoadingCircle-wrapper {
+  margin: 0 auto;
+  padding: 4em;
+  width: 100%;
+}
+
+.LoadingCircle-loader {
   color: #5e5e5e;
   font-size: 90px;
   overflow: hidden;

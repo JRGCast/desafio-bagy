@@ -16,7 +16,7 @@ function App() {
   return (
     <div style={ { display: 'flex' } }>
       <NavBar />
-      <main>
+      <main className='App-main-wrapper'>
         { console.log(getCurrData) }
         <AppRoutes />
       </main>

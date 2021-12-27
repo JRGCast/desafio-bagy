@@ -1,6 +1,12 @@
 @use '../variables' as c;
+
+.LoadingCircle-wrapper {
+  margin: 0 auto;
+  padding: 4em;
+  width: 100%;
+}
 // Créditos ao autor: https://projects.lukehaas.me/css-loaders/
-.loader {
+.LoadingCircle-loader {
   color: c.$loadingDots;
   font-size: 90px;
   // text-indent: -9999em;
