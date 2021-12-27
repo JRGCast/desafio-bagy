@@ -1,9 +1,3 @@
 import '../sass/componentStyles/Loading.scss';
-const LoadingCircle = () => {
-  return (
-    <div className="loader">
-
-    </div>);
-};
-
+const LoadingCircle = () => (<div className="loader" />);
 export default LoadingCircle;
