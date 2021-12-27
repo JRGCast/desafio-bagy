@@ -1,14 +1,6 @@
-// require('dotenv').config();
-
-export const DB_GRAPHQL_URL = 'https://staging-dot-bagy-api.appspot.com/graphql';
-// REACT_APP_BAGY_GRAPH_DB_URL=https://staging-dot-bagy-api.appspot.com/graphql
-export const LOJA_1_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAyIiwicm9sZSI6MX0.4AJs3zfnljsnbmKhZgW7BUsUUdqL7NDOkgDeqHbMqbI';
-// REACT_APP_LOJA1_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAyIiwicm9sZSI6MX0.4AJs3zfnljsnbmKhZgW7BUsUUdqL7NDOkgDeqHbMqbI
-export const LOJA_2_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAzIiwicm9sZSI6MX0.A9U6DQ_clavUnbiriUMjV1Lk7CTXL_uHBPi0NCL5-4c';
-// REACT_APP_LOJA_2_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAzIiwicm9sZSI6MX0.A9U6DQ_clavUnbiriUMjV1Lk7CTXL_uHBPi0NCL5-4c
-export const LOJA_3_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA0Iiwicm9sZSI6MX0.rfEidz8pqdgHSyoKVxP1BXyPFmtMCmpwytcahN1HL7I';
-// REACT_APP_LOJA_3_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA0Iiwicm9sZSI6MX0.rfEidz8pqdgHSyoKVxP1BXyPFmtMCmpwytcahN1HL7I
-export const LOJA_4_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA1Iiwicm9sZSI6MX0.Myi40zcpT_qk4HQesVgECZyPFdSYRyGvF5RP1xgTtrE';
-// REACT_APP_LOJA_4_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA1Iiwicm9sZSI6MX0.Myi40zcpT_qk4HQesVgECZyPFdSYRyGvF5RP1xgTtrE
-export const LOJA_5_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA2Iiwicm9sZSI6MX0.F34VFBqz2HEr-2aUOxXBu5NCRc31fkudXUkOqfrjNdM';
-// REACT_APP_LOJA_5_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTA2Iiwicm9sZSI6MX0.F34VFBqz2HEr-2aUOxXBu5NCRc31fkudXUkOqfrjNdM
+export const DB_GRAPHQL_URL = process.env.REACT_APP_BAGY_GRAPH_DB_URL;
+export const LOJA_1_TOKEN = process.env.REACT_APP_LOJA_1_TOKEN;
+export const LOJA_2_TOKEN = process.env.REACT_APP_LOJA_2_TOKEN;
+export const LOJA_3_TOKEN = process.env.REACT_APP_LOJA_3_TOKEN;
+export const LOJA_4_TOKEN = process.env.REACT_APP_LOJA_4_TOKEN;
+export const LOJA_5_TOKEN = process.env.REACT_APP_LOJA_5_TOKEN;

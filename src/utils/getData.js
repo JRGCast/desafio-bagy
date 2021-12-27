@@ -1,4 +1,4 @@
-const getData = (dbUrl, token, queryType) => {
+const getData = (dbUrl, token, queryType, stateSetter) => {
   const query = queryType;
   fetch(dbUrl, {
     method: "POST",
@@ -10,6 +10,7 @@ const getData = (dbUrl, token, queryType) => {
     body: (JSON.stringify({
       query
     }))
-  }).then(response => response.json()).then(jsoned => console.log(jsoned));
+  }).then(response => response.json())
+    .then(jsoned => stateSetter(jsoned)).catch(e => console.log(e));
 };
 export default getData;

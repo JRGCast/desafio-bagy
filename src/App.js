@@ -10,9 +10,11 @@ function App() {
   const [getCurrData, setGetCurrData] = useState({});
 
   useEffect(() => {
-    const fetchingData = async () => setGetCurrData(getData(exUrls.DB_GRAPHQL_URL, exUrls.LOJA_1_TOKEN, getAllQuery));
+    const fetchingData = async () => {
+      getData(exUrls.DB_GRAPHQL_URL, exUrls.LOJA_1_TOKEN, getAllQuery, setGetCurrData);
+    };
     fetchingData();
-  }, [getCurrData]);
+  }, []);
   return (
     <div style={ { display: 'flex' } }>
       <NavBar />
