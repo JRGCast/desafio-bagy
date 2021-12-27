@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
-<ul>
-  <NavLink to='/a'>OtherPage</NavLink>
-  <NavLink to='/'>LPage</NavLink>
-</ul>
-}
+  return (
+    <ul>
+      <NavLink to='/'>Home</NavLink>
+      <NavLink to='/a'>OtherPage</NavLink>
+    </ul>
+  );
+};
 
-export default NavBar
+export default NavBar;
