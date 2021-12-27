@@ -16,10 +16,11 @@ const AppRoutes = () => {
           }
         />
         <Route path="/a" element={
-          <Suspense fallback={ <Loading/> }>
+          <Suspense fallback={ <Loading/> }> 
             <OtherPage />
           </Suspense>
-        } />
+        } /> 
+        {/* rota falhando no netlify */}
       </Routes>
     </BrowserRouter>
   );
