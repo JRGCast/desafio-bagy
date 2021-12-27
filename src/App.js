@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import NavBar from './components/NavBar';
 import AppRoutes from './routes/AppRoutes';
 import './sass/main.scss';
 import * as exUrls from './utils/externalUrls';
@@ -13,10 +14,13 @@ function App() {
     fetchingData();
   }, [getCurrData]);
   return (
-    <main>
-      { console.log(getCurrData) }
-      <AppRoutes />
-    </main>
+    <div style={ { display: 'flex' } }>
+      <NavBar />
+      <main>
+        { console.log(getCurrData) }
+        <AppRoutes />
+      </main>
+    </div>
   );
 }
 

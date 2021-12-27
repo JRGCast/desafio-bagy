@@ -15,7 +15,6 @@ const Stores = lazy(() => import('../pages/Stores'));
 const AppRoutes = () => {
   return (
     <>
-      <NavBar />
       <Routes>
         <Route path={ landingPageUrl }
           element={
