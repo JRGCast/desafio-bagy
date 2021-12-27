@@ -1,4 +1,4 @@
-const getStorageNameQuery = `
+export const getStorageNameQuery = `
 query {
   me {
     name
@@ -6,7 +6,7 @@ query {
 }
 `;
 
-const getAllQuery = `
+export const getAllQuery = `
 query($storeCustomerId: Int, $first: Int, $offset: Int) {
   getConsolidatedOrders(storeCustomerId: $storeCustomerId, first:
     $first, offset: $offset){

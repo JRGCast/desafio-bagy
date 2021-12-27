@@ -1,7 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Loading from '../components/Loading';
+import LoadingCircle from '../components/LoadingCircle';
 import NavBar from '../components/NavBar';
+import { landingPageUrl, otherPageUrl } from '../utils/internalUrls';
+
 const LandingPage = lazy(() => import('../pages/LandingPage'));
 const OtherPage = lazy(() => import("../pages/OtherPage"));
 
@@ -10,19 +12,18 @@ const AppRoutes = () => {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/"
+        <Route path={ landingPageUrl }
           element={
-            <Suspense fallback={ <Loading /> }>
+            <Suspense fallback={ <LoadingCircle /> }>
               <LandingPage />
             </Suspense>
           }
         />
-        <Route path="/a" element={
-          <Suspense fallback={ <Loading /> }>
+        <Route path={ otherPageUrl } element={
+          <Suspense fallback={ <LoadingCircle /> }>
             <OtherPage />
           </Suspense>
         } />
-        {/* rota falhando no netlify */ }
       </Routes>
     </BrowserRouter>
   );

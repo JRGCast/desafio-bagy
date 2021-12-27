@@ -1,6 +1,6 @@
-require('dotenv').config();
+// require('dotenv').config();
 
-export const GRAPHQLURL = 'https://staging-dot-bagy-api.appspot.com/graphql';
+export const DB_GRAPHQL_URL = 'https://staging-dot-bagy-api.appspot.com/graphql';
 // REACT_APP_BAGY_GRAPH_DB_URL=https://staging-dot-bagy-api.appspot.com/graphql
 export const LOJA_1_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAyIiwicm9sZSI6MX0.4AJs3zfnljsnbmKhZgW7BUsUUdqL7NDOkgDeqHbMqbI';
 // REACT_APP_LOJA1_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdG9yZUlkIjoiMTAyIiwicm9sZSI6MX0.4AJs3zfnljsnbmKhZgW7BUsUUdqL7NDOkgDeqHbMqbI
