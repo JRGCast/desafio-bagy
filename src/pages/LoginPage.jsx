@@ -33,7 +33,6 @@ const LoginPage = () => {
           </label>
         </div>
         <button className='Login-submit-btn' type='button' onClick={ handleClick } disabled={ disableBtn }>Ir para LP</button>
-        <button type='button' onClick={ handleClick }>Test</button>
       </fieldset>
     </div>
 

@@ -85,6 +85,27 @@ code {
   background: #363740;
 }
 
+.TopCards-main-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.TopCards-card {
+  border: 0.2em solid #A4A6B3;
+  color: #A4A6B3;
+  font-size: calc(0.9em - 20%);
+  padding: 0.2em;
+  text-align: center;
+  transition: 0.3s;
+  margin: 1em;
+  width: 18em;
+}
+.TopCards-card:hover {
+  color: #FC3C8D;
+  border-color: #FC3C8D;
+}
+
 .Login-main-wrapper {
   margin: auto;
   text-align: center;

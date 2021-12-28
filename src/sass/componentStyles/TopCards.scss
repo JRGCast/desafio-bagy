@@ -1,0 +1,22 @@
+@use '../variables/' as v;
+
+.TopCards-main-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.TopCards-card {
+  border: 0.2em solid v.$cardBorder;
+  color: v.$textSecondary;
+  font-size: calc(v.$cardFontSize - 20%);
+  padding: 0.2em;
+  text-align: center;
+  transition: 0.3s;
+  margin: 1em;
+  width: 18em;
+  &:hover {
+    color: v.$textHighLightOnWhite;
+    border-color: v.$textHighLightOnWhite;
+  }
+}

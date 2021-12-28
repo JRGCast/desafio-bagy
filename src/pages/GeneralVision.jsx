@@ -1,5 +1,14 @@
+import TopCards from "../components/TopCards";
+
 const GeneralVision = () => {
-  return (<h1>Página Visão Geral</h1>);
+  return (
+    <div>
+      <header>
+        <h1>Página Visão Geral</h1>
+        <TopCards />
+      </header>
+    </div>
+  );
 };
 
 export default GeneralVision;

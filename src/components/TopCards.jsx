@@ -1,7 +1,19 @@
+import '../sass/main.scss';
 const TopCards = () => {
   return (
-    <div>
-
+    <div className='TopCards-main-wrapper'>
+      <section className='TopCards-total-stores TopCards-card'>
+        <h4>Total de Lojas</h4>
+      </section>
+      <section className='TopCards-total-income TopCards-card'>
+        <h4>Faturamento Total</h4>
+      </section>
+      <section className='TopCards-star-store TopCards-card'>
+        <h4>Loja Destaque</h4>
+      </section>
+      <section className='TopCards-goals TopCards-card'>
+        <h4>Meta Mensal</h4>
+      </section>
     </div>
   );
 };
