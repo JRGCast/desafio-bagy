@@ -7,7 +7,7 @@ const UserBar = () => {
     <div className='UserBar-main-wrapper'>
       <header className='UserBar-header'>
         <h3 className='UserBar-greetings'>
-          Bem-vindo { id } { " " } <AccountCircleTwoToneIcon />
+          Olá { id }! { " " } <AccountCircleTwoToneIcon />
         </h3>
       </header>
     </div>
