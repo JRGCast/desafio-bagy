@@ -1,8 +1,10 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import LoadingCircle from '../components/LoadingCircle';
-import LoginPage from '../pages/LoginPage';
-import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, loginUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
+import {
+  clientsUrl, configsUrl, generalVUrl, landingPageUrl,
+  loginUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl
+} from '../utils/internalUrls';
 const LandingPage = lazy(() => import('../pages/LandingPage'));
 const Clients = lazy(() => import('../pages/Clients'));
 const Configurations = lazy(() => import('../pages/Configurations'));
@@ -16,13 +18,13 @@ const AppRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path={ loginUrl }
+        <Route path='/'
           element={
             <Suspense fallback={ <LoadingCircle /> }>
-              <LoginPage />
+              <Navigate to={ landingPageUrl } />
             </Suspense>
-          }
-        />
+          }>
+        </Route>
         <Route path={ landingPageUrl }
           element={
             <Suspense fallback={ <LoadingCircle /> }>
@@ -63,6 +65,11 @@ const AppRoutes = () => {
         <Route path={ configsUrl } element={
           <Suspense fallback={ <LoadingCircle /> }>
             <Configurations />
+          </Suspense>
+        } />
+        <Route path={ loginUrl } element={
+          <Suspense fallback={ <LoadingCircle /> }>
+            <Navigate to='/login' />
           </Suspense>
         } />
         <Route path='*' element={

@@ -8,7 +8,7 @@ import StarHalfTwoToneIcon from '@mui/icons-material/StarHalfTwoTone';
 import StoreTwoToneIcon from '@mui/icons-material/StoreTwoTone';
 
 
-export const landingPageUrl = '/';
+export const landingPageUrl = 'landingpage';
 export const generalVUrl = '/visaogeral';
 export const storesUrl = '/lojas';
 export const salesUrl = '/vendas';
@@ -16,10 +16,9 @@ export const clientsUrl = '/clientes';
 export const productsUrl = '/produtos';
 export const planNAchvmntsUrl = '/planosemetas';
 export const configsUrl = '/configuracoes';
-export const loginUrl = '/login'
+export const loginUrl = '/login';
 
 export const allUrlsArr = [
-  { name: 'Landing Page', path: '/' },
   { name: 'Visão Geral', path: generalVUrl, icon: <InsightsTwoToneIcon /> },
   { name: 'Lojas', path: storesUrl, icon: <StoreTwoToneIcon /> },
   { name: 'Vendas', path: salesUrl, icon: <PriceCheckTwoToneIcon /> },
@@ -27,5 +26,5 @@ export const allUrlsArr = [
   { name: 'Produtos', path: productsUrl, icon: <ShoppingBasketTwoToneIcon /> },
   { name: 'Planos e Metas', path: planNAchvmntsUrl, icon: <StarHalfTwoToneIcon /> },
   { name: 'Configurações', path: configsUrl, icon: <SettingsSuggestTwoToneIcon /> },
-  { name: 'Sair', path: '/', icon: <LogoutTwoToneIcon /> }
+  { name: 'Sair', path: loginUrl, icon: <LogoutTwoToneIcon /> }
 ];

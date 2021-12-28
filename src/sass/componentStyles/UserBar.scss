@@ -1,0 +1,16 @@
+@use '../variables' as v;
+
+.UserBar-main-wrapper {
+  background: v.$secondaryBg;
+}
+
+.UserBar-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.UserBar-greetings {
+  color: v.$textHighLightOnBlack;
+  background: v.$secondaryBg;
+}

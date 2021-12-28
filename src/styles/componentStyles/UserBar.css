@@ -1,0 +1,14 @@
+.UserBar-main-wrapper {
+  background: #363740;
+}
+
+.UserBar-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.UserBar-greetings {
+  color: #ffff;
+  background: #363740;
+}
