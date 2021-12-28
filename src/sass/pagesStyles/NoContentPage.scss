@@ -1,0 +1,26 @@
+@use '../variables/' as v;
+
+.NoContentPage {
+  border: 1px solid v.$textSecondary;
+  color: v.$textPrimary;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    border-radius: 0 400% 200% 0;
+    border-color: v.$sideNavBorderHighLight;
+    color: v.$textHighLightOnWhite;
+    animation: crazysloppy infinite 1s;
+  }
+}
+
+@keyframes crazysloppy {
+  0%, 100% {
+    border-radius: 0 400% 200% 0;
+  }
+  50% {
+    border-radius: 0 200% 400% 0;
+  }
+}

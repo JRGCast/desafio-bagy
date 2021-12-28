@@ -5,4 +5,6 @@
 @use './componentStyles/UserBar.scss';
 @use './componentStyles/TopCards.scss';
 // pages
-@use './pagesStyles/Login.scss'
+@use './pagesStyles/Login.scss';
+@use './pagesStyles/GeneralVision.scss';
+@use './pagesStyles/NoContentPage.scss';

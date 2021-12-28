@@ -1,5 +1,9 @@
 const Sales = () => {
-  return (<h1>Página Vendas</h1>);
+  return (
+    <section className='NoContentPage'>
+      <h1>Página Vendas</h1>
+    </section>
+  );
 };
 
 export default Sales;

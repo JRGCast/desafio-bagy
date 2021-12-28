@@ -1,5 +1,11 @@
+import '../sass/main.scss';
 const Clients = () => {
-  return (<h1>Página Clientes</h1>);
+  return (
+    <section className='NoContentPage'>
+      <h1>Página Clientes</h1>
+    </section>
+
+  );
 };
 
 export default Clients;

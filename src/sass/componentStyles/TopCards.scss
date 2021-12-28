@@ -8,15 +8,46 @@
 
 .TopCards-card {
   border: 0.2em solid v.$cardBorder;
+  border-radius: 10px;
   color: v.$textSecondary;
   font-size: calc(v.$cardFontSize - 20%);
   padding: 0.2em;
   text-align: center;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out 0s;
   margin: 1em;
   width: 18em;
+  p {
+    color: v.$textPrimary;
+    font-size: calc(v.$cardFontSize + 100%);
+    font-weight: 700;
+    transition: all 0.3s ease-in-out 0s;
+  }
   &:hover {
+    p {
+      color: v.$textHighLightOnWhite;
+      border-color: v.$textHighLightOnWhite;
+      text-decoration: underline;
+    }
     color: v.$textHighLightOnWhite;
     border-color: v.$textHighLightOnWhite;
+    animation: waving ease-in-out 0.8s;
+  }
+}
+
+@keyframes waving {
+  0% {
+    border-radius: 10px 10px 10px 10px;
+  }
+  25% {
+    border-radius: 100px 10px 10px 10px;
+  }
+  50% {
+    border-radius: 10px 40px 10px 10px;
+  }
+  75% {
+    border-radius: 10px 10px 40px 10px;
+  }
+  90% {
+    border-radius: 10px 10px 10px 40px;
   }
 }

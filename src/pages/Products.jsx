@@ -1,5 +1,9 @@
 const Products = () => {
-  return (<h1>Página Produtos</h1>);
+  return (
+    <section className='NoContentPage'>
+      <h1>Página Produtos</h1>
+    </section>
+  );
 };
 
 export default Products;

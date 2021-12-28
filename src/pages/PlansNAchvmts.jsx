@@ -1,5 +1,9 @@
 const PlansNAchvmts = () => {
-  return (<h1>Página Planos e Metas</h1>);
+  return (
+    <section className='NoContentPage'>
+      <h1>Página Planos e Metas</h1>
+    </section>
+  );
 };
 
 export default PlansNAchvmts;

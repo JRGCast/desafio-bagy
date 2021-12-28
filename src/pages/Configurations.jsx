@@ -1,5 +1,9 @@
 const Configurations = () => {
-  return (<h1>Página Configurações</h1>);
+  return (
+    <section className='NoContentPage'>
+      <h1>Página Configurações</h1>
+    </section>
+  );
 };
 
 export default Configurations;
