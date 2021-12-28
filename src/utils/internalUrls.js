@@ -16,6 +16,7 @@ export const clientsUrl = '/clientes';
 export const productsUrl = '/produtos';
 export const planNAchvmntsUrl = '/planosemetas';
 export const configsUrl = '/configuracoes';
+export const loginUrl = '/login'
 
 export const allUrlsArr = [
   { name: 'Landing Page', path: '/' },

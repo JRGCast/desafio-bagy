@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from "react-router-dom";
 import LoadingCircle from '../components/LoadingCircle';
-import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
+import LoginPage from '../pages/LoginPage';
+import { clientsUrl, configsUrl, generalVUrl, landingPageUrl, loginUrl, planNAchvmntsUrl, productsUrl, salesUrl, storesUrl } from '../utils/internalUrls';
 const LandingPage = lazy(() => import('../pages/LandingPage'));
 const Clients = lazy(() => import('../pages/Clients'));
 const Configurations = lazy(() => import('../pages/Configurations'));
@@ -15,6 +16,13 @@ const AppRoutes = () => {
   return (
     <>
       <Routes>
+        <Route path={ loginUrl }
+          element={
+            <Suspense fallback={ <LoadingCircle /> }>
+              <LoginPage />
+            </Suspense>
+          }
+        />
         <Route path={ landingPageUrl }
           element={
             <Suspense fallback={ <LoadingCircle /> }>
