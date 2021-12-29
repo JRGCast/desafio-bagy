@@ -3,6 +3,21 @@ import GraphicChart from "./GraphicChart";
 
 const data = [{ name: 'Page A', uv: 400, pv: 900, amt: 2400 }, { name: 'Page B', uv: 800, pv: 2400, amt: 2400 }, { name: 'Page C', uv: 100, pv: 500, amt: 2400 }];
 const MiddleCards = ({ price, date }) => {
+  const treatingDates = () => {
+    if (date) {
+      const mapping = date.map((loja, index) => {
+        const tratandoData = loja[`Loja_do_testinho_${index + 1}`].map(item => {
+          const [year, month, day] = item.split('-');
+          return `${day}-${month}-${year}`;
+        });
+        return ({ [`Loja_do_testinho_${index + 1}`]: [...new Set(tratandoData)] });
+      });
+      console.log(mapping);
+    }
+  };
+
+  treatingDates();
+
   return (
     <div className='MiddleCards-main-wrapper'>
       <section className='MiddleCards-section'>

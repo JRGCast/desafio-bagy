@@ -2,7 +2,7 @@
   border: 1px solid #A4A6B3;
   color: #000;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1em;
   text-align: center;
   transition: 0.3s ease-in-out;
@@ -11,7 +11,7 @@
   border-radius: 0 400% 200% 0;
   border-color: #FC3C8D;
   color: #FC3C8D;
-  animation: crazysloppy infinite 1s;
+  animation: crazysloppy infinite 0.5s;
 }
 
 @keyframes crazysloppy {

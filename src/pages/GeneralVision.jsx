@@ -65,22 +65,34 @@ const GeneralVision = () => {
     setDadosPincados(importantDataMapping);
   }, [lojasData]);
 
+  // data to cards
+  // top card
   let totalStores;
   let starStore;
   let totalIncome;
   let goals;
 
+  // middle card
+  let date;
+
   if (dadosPincados.length > 0) {
+    // top card res
     totalStores = lojasData.length;
-    let mapRawPrices = dadosPincados.map((item, index) => item[0][`Loja_do_testinho_${index + 1}`].map(item => item.price));
+    let mapRawPrices = dadosPincados.map((item, index) => item[0][`Loja_do_testinho_${index + 1}`].map(({ price }) => price));
     let mapUnitedPrices = mapRawPrices.map(item => item.reduce((price, currVal) => price += currVal, 0));
     let starStoreIndex = mapUnitedPrices.indexOf(mapUnitedPrices.reduce((acc, currV) => Math.max(acc, currV)));
     starStore = `Loja do testinho ${starStoreIndex + 1}`;
     totalIncome = mapUnitedPrices.reduce((price, currVal) => price += currVal, 0);
     goals = totalIncome + totalIncome * 0.1;
+    // middle card res
+    date = dadosPincados.map((item, index) => ({
+      [`Loja_do_testinho_${index + 1}`]: item[0][`Loja_do_testinho_${index + 1}`]
+        .map(({ createdAt }) => (createdAt.split('T')[0]))
+    }));
   }
 
-  console.log('reduce', starStore);
+
+  console.log('reduce', date);
 
   return (
     <div className='GeneralVision-main-wrapper'>
@@ -88,7 +100,7 @@ const GeneralVision = () => {
         <h1>Página Visão Geral</h1>
         <TopCards totalStores={ totalStores } totalIncome={ totalIncome } starStore={ starStore } goals={ goals } />
       </header>
-      <MiddleCards />
+      <MiddleCards date={ date } />
       <BottomCards />
     </div>
   );
