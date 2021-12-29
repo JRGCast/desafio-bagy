@@ -33,7 +33,7 @@ const GeneralVision = () => {
           const storeName = item.data?.me?.name.replaceAll(' ', '_');
           const currToken = LOJAS_TOKENS[`LOJA_${index + 1}_TOKEN`];
           const storeData = await Promise.resolve(getData(DB_GRAPHQL_URL, currToken, getAllQuery));
-          const joiningObj = puttingDataInsideObj(storeName, storeData);
+          const joiningObj = puttingDataInsideObj(storeName, storeData.data?.getConsolidatedOrders);
           return joiningObj;
         })
       );
@@ -42,11 +42,13 @@ const GeneralVision = () => {
     promisingDatas();
   }, [lojasNames]);
 
+  const totalStores = lojasData.length;
+
   return (
     <div className='GeneralVision-main-wrapper'>
       <header>
         <h1>Página Visão Geral</h1>
-        <TopCards />
+        <TopCards totalStores={ totalStores } />
       </header>
       <MiddleCards />
       <BottomCards />
