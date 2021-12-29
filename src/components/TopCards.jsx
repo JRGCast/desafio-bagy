@@ -3,6 +3,11 @@ import '../sass/main.scss';
 const TopCards = ({ totalStores, totalIncome, starStore, goals }) => {
 
   const verifyPropsData = (propsData) => propsData ? propsData : 'Carregando dados...';
+  let formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+
   return (
     <div className='TopCards-main-wrapper'>
       <section className='TopCards-total-stores TopCards-card'>
@@ -11,7 +16,7 @@ const TopCards = ({ totalStores, totalIncome, starStore, goals }) => {
       </section>
       <section className='TopCards-total-income TopCards-card'>
         <h4>Faturamento Total</h4>
-        <p>{ verifyPropsData(totalIncome) }</p>
+        <p>{ totalIncome ? formatter.format(totalIncome) : 'Carregando dados...' }</p>
       </section>
       <section className='TopCards-star-store TopCards-card'>
         <h4>Loja Destaque</h4>

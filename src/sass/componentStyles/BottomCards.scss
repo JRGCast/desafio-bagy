@@ -1,0 +1,11 @@
+.BottomCards-main-wrapper {
+  display: flex;
+}
+
+.BottomCards-table {
+  border: 1px solid black;
+  overflow: scroll;
+  &tr, th, td {
+    border: 1px solid black;
+  }
+}

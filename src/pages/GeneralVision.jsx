@@ -12,6 +12,7 @@ const {
 const GeneralVision = () => {
   const [lojasNames, setLojasNames] = useState([]);
   const [lojasData, setLojasData] = useState([]);
+  const [dadosTratados, setDadosTratados] = useState([]);
 
   const puttingDataInsideObj = async (obj, data) => ({ [obj]: data });
 
@@ -33,7 +34,7 @@ const GeneralVision = () => {
           const storeName = item.data?.me?.name.replaceAll(' ', '_');
           const currToken = LOJAS_TOKENS[`LOJA_${index + 1}_TOKEN`];
           const storeData = await Promise.resolve(getData(DB_GRAPHQL_URL, currToken, getAllQuery));
-          const joiningObj = puttingDataInsideObj(storeName, storeData.data?.getConsolidatedOrders);
+          const joiningObj = puttingDataInsideObj(storeName, storeData.data);
           return joiningObj;
         })
       );
@@ -42,13 +43,41 @@ const GeneralVision = () => {
     promisingDatas();
   }, [lojasNames]);
 
+  useEffect(() => {
+    const importantDataMapping = lojasData.map((item, index) => {
+      let result = [];
+      const consolidatedOrders = (item[`Loja_do_testinho_${index + 1}`]).getConsolidatedOrders;
+      const currObj = {};
+      const details = consolidatedOrders.map(data => {
+        const {
+          consolidatedOrderId, createdAt, discountCouponPercentage, discountCouponText, products, price
+        } = data;
+        const dataObj = {
+          consolidatedOrderId, createdAt, discountCouponPercentage, discountCouponText, products, price
+        };
+        return dataObj;
+      });
+      const sortByOrderId = details.sort((a, b) => (a.consolidatedOrderId > b.consolidatedOrderId) ? 1 : ((b.consolidatedOrderId > a.consolidatedOrderId) ? -1 : 0));
+      currObj[`Loja_do_testinho_${index + 1}`] = sortByOrderId;
+      result.push(currObj);
+      return result;
+    });
+    setDadosTratados(importantDataMapping);
+  }, [lojasData]);
+
   const totalStores = lojasData.length;
+  const mapRawPrices = dadosTratados.map((item, index) => item[0][`Loja_do_testinho_${index + 1}`].map(item => item.price));
+  const mapUnitedPrices = mapRawPrices.map(item => item.reduce((price, currVal) => price += currVal, 0));
+  const totalIncome = mapUnitedPrices.reduce((price, currVal) => price += currVal, 0);
+
+  console.log('reduce', totalIncome);
 
   return (
     <div className='GeneralVision-main-wrapper'>
       <header>
         <h1>Página Visão Geral</h1>
-        <TopCards totalStores={ totalStores } />
+        <TopCards totalStores={ totalStores } totalIncome={ totalIncome } starStore={ '' } goals={ '' } />
+        { console.log(dadosTratados) }
       </header>
       <MiddleCards />
       <BottomCards />
