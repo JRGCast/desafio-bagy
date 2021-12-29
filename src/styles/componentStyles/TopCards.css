@@ -24,7 +24,7 @@
 .TopCards-card:hover {
   color: #FC3C8D;
   border-color: #FC3C8D;
-  animation: waving ease-in-out 0.8s;
+  animation: waving ease-in-out 1s;
 }
 .TopCards-card:hover p {
   color: #FC3C8D;

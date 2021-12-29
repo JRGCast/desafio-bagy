@@ -1,4 +1,5 @@
 import BottomCards from "../components/BottomCards";
+import MiddleCards from "../components/MiddleCards";
 import TopCards from "../components/TopCards";
 
 const GeneralVision = () => {
@@ -8,7 +9,8 @@ const GeneralVision = () => {
         <h1>Página Visão Geral</h1>
         <TopCards />
       </header>
-      <BottomCards/>
+      <MiddleCards />
+      <BottomCards />
     </div>
   );
 };
