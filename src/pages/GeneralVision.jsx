@@ -12,7 +12,7 @@ const {
 const GeneralVision = () => {
   const [lojasNames, setLojasNames] = useState([]);
   const [lojasData, setLojasData] = useState([]);
-  const [dadosTratados, setDadosTratados] = useState([]);
+  const [dadosPincados, setDadosPincados] = useState([]);
 
   const puttingDataInsideObj = async (obj, data) => ({ [obj]: data });
 
@@ -62,22 +62,31 @@ const GeneralVision = () => {
       result.push(currObj);
       return result;
     });
-    setDadosTratados(importantDataMapping);
+    setDadosPincados(importantDataMapping);
   }, [lojasData]);
 
-  const totalStores = lojasData.length;
-  const mapRawPrices = dadosTratados.map((item, index) => item[0][`Loja_do_testinho_${index + 1}`].map(item => item.price));
-  const mapUnitedPrices = mapRawPrices.map(item => item.reduce((price, currVal) => price += currVal, 0));
-  const totalIncome = mapUnitedPrices.reduce((price, currVal) => price += currVal, 0);
+  let totalStores;
+  let starStore;
+  let totalIncome;
+  let goals;
 
-  console.log('reduce', totalIncome);
+  if (dadosPincados.length > 0) {
+    totalStores = lojasData.length;
+    let mapRawPrices = dadosPincados.map((item, index) => item[0][`Loja_do_testinho_${index + 1}`].map(item => item.price));
+    let mapUnitedPrices = mapRawPrices.map(item => item.reduce((price, currVal) => price += currVal, 0));
+    let starStoreIndex = mapUnitedPrices.indexOf(mapUnitedPrices.reduce((acc, currV) => Math.max(acc, currV)));
+    starStore = `Loja do testinho ${starStoreIndex + 1}`;
+    totalIncome = mapUnitedPrices.reduce((price, currVal) => price += currVal, 0);
+    goals = totalIncome + totalIncome * 0.1;
+  }
+
+  console.log('reduce', starStore);
 
   return (
     <div className='GeneralVision-main-wrapper'>
       <header>
         <h1>Página Visão Geral</h1>
-        <TopCards totalStores={ totalStores } totalIncome={ totalIncome } starStore={ '' } goals={ '' } />
-        { console.log(dadosTratados) }
+        <TopCards totalStores={ totalStores } totalIncome={ totalIncome } starStore={ starStore } goals={ goals } />
       </header>
       <MiddleCards />
       <BottomCards />

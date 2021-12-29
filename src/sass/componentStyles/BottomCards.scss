@@ -1,11 +1,20 @@
+@use '../variables/' as v;
+
 .BottomCards-main-wrapper {
   display: flex;
 }
 
+.BottomCards-card {
+ border: 1px solid v.$cardBorder;
+ padding: 1em;
+ margin: 1em;
+ text-align: center;
+}
+
 .BottomCards-table {
-  border: 1px solid black;
+  border: 1px solid v.$cardBorder;
   overflow: scroll;
   &tr, th, td {
-    border: 1px solid black;
+    border: 1px solid v.$cardBorder;
   }
 }

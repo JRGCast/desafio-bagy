@@ -1,15 +1,15 @@
-import '../sass/main.scss'
+import '../sass/main.scss';
 import GraphicChart from "./GraphicChart";
 
 const data = [{ name: 'Page A', uv: 400, pv: 900, amt: 2400 }, { name: 'Page B', uv: 800, pv: 2400, amt: 2400 }, { name: 'Page C', uv: 100, pv: 500, amt: 2400 }];
-const MiddleCards = () => {
+const MiddleCards = ({ price, date }) => {
   return (
     <div className='MiddleCards-main-wrapper'>
-      <section >
+      <section className='MiddleCards-section'>
         <h4>Total Faturamento Mensal</h4>
         <GraphicChart data={ data } />
       </section>
-      <section>
+      <section className='MiddleCards-section'>
         <div>
           <h5>Loja</h5>
           <p>Estilo Pri</p>

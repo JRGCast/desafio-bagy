@@ -2,11 +2,19 @@ import '../sass/main.scss';
 
 const TopCards = ({ totalStores, totalIncome, starStore, goals }) => {
 
-  const verifyPropsData = (propsData) => propsData ? propsData : 'Carregando dados...';
   let formatter = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
   });
+  const verifyPropsData = (propsData, currency) => {
+    if (propsData) {
+      if (currency) return formatter.format(propsData);
+      return propsData;
+    } else {
+      return 'Carregando dados...';
+    }
+  };
+
 
   return (
     <div className='TopCards-main-wrapper'>
@@ -16,7 +24,7 @@ const TopCards = ({ totalStores, totalIncome, starStore, goals }) => {
       </section>
       <section className='TopCards-total-income TopCards-card'>
         <h4>Faturamento Total</h4>
-        <p>{ totalIncome ? formatter.format(totalIncome) : 'Carregando dados...' }</p>
+        <p>{ verifyPropsData(totalIncome, true) }</p>
       </section>
       <section className='TopCards-star-store TopCards-card'>
         <h4>Loja Destaque</h4>
@@ -24,7 +32,7 @@ const TopCards = ({ totalStores, totalIncome, starStore, goals }) => {
       </section>
       <section className='TopCards-goals TopCards-card'>
         <h4>Meta Mensal</h4>
-        <p>{ verifyPropsData(goals) }</p>
+        <p>{ verifyPropsData(goals, true) }</p>
       </section>
     </div>
   );
