@@ -1,6 +1,7 @@
-const getData = (dbUrl, token, queryType, stateSetter) => {
+const getData = async (dbUrl, token, queryType) => {
+  let result;
   const query = queryType;
-  fetch(dbUrl, {
+  await fetch(dbUrl, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -11,6 +12,7 @@ const getData = (dbUrl, token, queryType, stateSetter) => {
       query
     }))
   }).then(response => response.json())
-    .then(jsoned => stateSetter(jsoned)).catch(e => console.log(e));
+    .then(jsoned => result = jsoned).catch(e => { console.log(e); result = e; });
+  return result;
 };
 export default getData;
