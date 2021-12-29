@@ -1,7 +1,7 @@
 # Desafio-bagy
 ## O desafio:
 - Conforme e-mail recebido, o desafio consistiu em recriar a página [deste Figma](https://www.figma.com/file/fTxV4ZLMNlHtuy675J5TAj/Dashboard-Bagy-2020?node-id=0%3A1), podendo adicionar coisas ao design, de acordo com a criatividade;
-- Com exceção da navegação, não restou instruído como deveriam ser as interações, apesar de facilmente deduzível. Há uma imensidão de possibilidades;
+- Com exceção da navegação, não restou instruído como deveriam ser as interações, apesar de facilmente deduzíveis. Há uma imensidão de possibilidades;
 
 ## Instruções para o desenvolvimento:
 - Em seu terminal, coloque os seguintes comandos:
